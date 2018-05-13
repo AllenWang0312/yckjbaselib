@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.yckj.baselib">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application>
+
+        <!-- <activity -->
+        <!-- android:name=".AnimateActivity" -->
+        <!-- android:label="@string/title_activity_animate" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".common.base.BaseWebViewActivity"
+            android:theme="@style/AppTheme.SlideInFromRight">
+        </activity>
+        <activity android:name=".common.base.BaseMainActivity">
+        </activity>
+        <activity android:name=".common.base.FragmentActivity">
+        </activity>
+        <activity android:name=".common.base.BaseBrowserActivity">
+        </activity>
+    </application>
+
+</manifest>

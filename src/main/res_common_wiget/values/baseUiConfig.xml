@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--使用说明
+      主题样式配置文件
+      不同项目之间 如何区别
+      新建uiconfig 复制下面所有属性 并注释掉这里
+      新建的uiconfig 不要加入到vcs-->
+    <!--<color name="clickable_text_color">#3ea0e6</color>-->
+    <!--//title-->
+    <!--<dimen name="title_text_size">24sp</dimen>-->
+    <!--<color name="title_text_color">@color/titleTextColor</color>-->
+    <!--//button-->
+    <!--<dimen name="button_radius">6dp</dimen>-->
+
+    <!--<dimen name="button_height">36dp</dimen>-->
+
+    <!--<dimen name="big_button_height">40dp</dimen>-->
+
+    <!--<color name="button_positive_startcolor">#E04040</color>-->
+    <!--<color name="button_positive_endcolor">#f05050</color>-->
+
+
+    <!--<color name="button_positive_color">?colorPrimary</color>-->
+    <!--<color name="button_second_color">#d8d8d8</color>-->
+
+    <!--<color name="button_negative_color">@color/white</color>-->
+
+
+    <!--<color name="button_unable_color">#666666</color>-->
+
+    <!--<dimen name="Lv1TextSize">24dp</dimen>-->
+    <!--<color name="Lv1TextColor">#222222</color>-->
+
+    <!--<dimen name="Lv2TextSize">18dp</dimen>-->
+    <!--<color name="Lv2TextColor">#555555</color>-->
+
+    <!--<dimen name="Lv3TextSize">12dp</dimen>-->
+    <!--<color name="Lv3TextColor">#999999</color>-->
+
+
+</resources>
