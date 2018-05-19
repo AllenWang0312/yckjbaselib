@@ -45,7 +45,10 @@ public class BaseWebViewFragment extends BaseBarFragment {
     public BaseWebViewFragment(String url) {
         this.url = url;
     }
-
+    public BaseWebViewFragment(String url,int id) {
+        this.url = url;
+        layoutId=id;
+    }
     public BaseWebViewFragment(String title, String content) {
         this.title = title;
         this.content = content;
@@ -54,7 +57,7 @@ public class BaseWebViewFragment extends BaseBarFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_service_text, container, false);
+        View view = inflater.inflate(getLayoutId(), container, false);
         webview = view.findViewById(R.id.webview);
         progress = view.findViewById(R.id.loading);
         WebSettings settings = webview.getSettings();
@@ -179,5 +182,16 @@ public class BaseWebViewFragment extends BaseBarFragment {
     @Override
     public boolean backable() {
         return webview.canGoBack();
+    }
+
+
+    Integer layoutId;
+    public int getLayoutId() {
+        if(layoutId!=null){
+            return layoutId;
+        }else {
+            return R.layout.fragment_base_webview;
+        }
+
     }
 }
