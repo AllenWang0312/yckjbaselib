@@ -139,8 +139,7 @@ public class StringUtils {
 
     public static String getEndString(String name) {
         if(name.contains(".")){
-            return name.substring(name.lastIndexOf("."), name.length() - 1);
-
+            return name.substring(name.lastIndexOf("."), name.length());
         }else {
             return "";
         }

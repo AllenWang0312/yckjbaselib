@@ -1,9 +1,14 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'maven'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+//    compileSdkVersion 27
+//    buildToolsVersion '27.0.3'
 
     sourceSets {
         main {
@@ -26,6 +31,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        preview {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 
     compileOptions {
@@ -39,10 +52,17 @@ dependencies {
     //base ui
     compile 'com.android.support:recyclerview-v7:27.1.1'
     compile 'com.android.support:appcompat-v7:27.1.1'
+
     compile 'com.android.support:support-v4:27.1.1'
     compile 'com.android.support:design:27.1.1'
+
     compile 'com.android.support:cardview-v7:27.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.1.0'
+
+//    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    compile 'com.android.support:percent:27.1.1'
+
+
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
     //okhttp网络框架
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
@@ -63,7 +83,7 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.5.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
     //    compile 'com.pl:wheelview:0.7.2'
-    //    compile 'com.google.android:flexbox:0.2.7'
+
     //高斯模糊
     //    compile 'jp.wasabeef:glide-transformations:3.0.1'
     //    compile 'de.hdodenhof:circleimageview:2.1.0'
@@ -74,4 +94,16 @@ dependencies {
     //    testImplementation 'junit:junit:4.12'
     //    androidTestImplementation 'com.android.support.test:runner:0.5'
     //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+}
+
+uploadArchives{
+    repositories.mavenDeployer{
+        def deployPath = file(getProperty('arr.yckjbaselib'))
+        repository(url:"file://${deployPath.absolutePath}")
+        pom.project{
+            groupId "edu.tjrac.swant"
+            artifactId "yckjbaselib"
+            version "1.0"
+        }
+    }
 }

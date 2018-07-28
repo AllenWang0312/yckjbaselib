@@ -70,4 +70,7 @@
 
     <dimen name="Lv3TextSize">14dp</dimen>
     <color name="Lv3TextColor">#666666</color>
+
+    <dimen name="dialog_padding_hro">16dp</dimen>
+    <dimen name="dialog_padding_vert">8dp</dimen>
 </resources>

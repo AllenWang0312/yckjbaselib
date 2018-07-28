@@ -1,5 +1,7 @@
 package com.yckj.baselib.common.base;
 
+import com.yckj.baselib.util.T;
+
 /**
  * 类描述:
  * 创建人: Administrator
@@ -16,7 +18,7 @@ public abstract class BaseBarMVPActivity<P extends BasePresenter> extends BaseBa
 
     @Override
     public void showToast(String msg) {
-
+        T.show(mContext,msg);
     }
 
     @Override
