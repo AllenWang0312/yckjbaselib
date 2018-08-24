@@ -77,7 +77,7 @@ public class UiUtils {
     }
 
     @SuppressLint({"NewApi", "RestrictedApi"})
-    public static void showPopmenu(Context context, View v,
+    public static PopupMenu showPopmenu(Context context, View v,
                                    boolean withIcon,
                                    int menuId, PopupMenu.OnMenuItemClickListener onMenuItemClickListener) {
         PopupMenu popup = new PopupMenu(context, v);
@@ -94,7 +94,8 @@ public class UiUtils {
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(menuId, popup.getMenu());
         popup.setOnMenuItemClickListener(onMenuItemClickListener);
-        popup.show();
+      popup.show();
+        return popup;
     }
 
 

@@ -32,9 +32,10 @@ public class OpenFileHelper {
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.N){
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(context,
-//                    BuildConfig.APPLICATION_ID
+//                    BuildConfig.APPLICATION_ID,
                     "edu.tjrac.swant.unicorn"
-                    + ".fileProvider", file);
+                    + ".fileProvider",
+                    file);
             intent.setDataAndType(contentUri, type);
         }else {
             //设置intent的data和Type属性。

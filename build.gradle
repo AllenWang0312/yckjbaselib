@@ -64,6 +64,7 @@ dependencies {
 
 
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
+
     //okhttp网络框架
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'

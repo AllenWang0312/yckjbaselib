@@ -17,12 +17,12 @@ import com.yckj.baselib.R;
 import static android.view.KeyEvent.KEYCODE_BACK;
 
 
-public  class BaseWebViewActivity extends BaseBarActivity {
+public class BaseWebViewActivity extends BaseBarActivity {
 
     String title;
-   private String url;
+    private String url;
     String content;
-   private WebView webview;
+    private WebView webview;
     ProgressBar progress;
 
     @Override
