@@ -214,7 +214,7 @@ public class FileUtils {
             return type;
         }
     /* 获取文件的后缀名*/
-        String end = fName.substring(dotIndex, fName.length()).toLowerCase();
+        String end = extensionName(fName);
         if (end == "") return type;
         //在MIME和文件类型的匹配表中找到对应的MIME类型。
         for (int i = 0; i < MIME_MapTable.length; i++) {
@@ -400,4 +400,13 @@ public class FileUtils {
     public static String getName(String url) {
         return url.substring(url.lastIndexOf("/"));
     }
+
+    public static String  extensionName(String file){
+        int dotIndex = file.lastIndexOf(".");
+        if(dotIndex<0){
+            return "";
+        }
+        return file.substring(dotIndex, file.length()).toLowerCase();
+    }
+
 }

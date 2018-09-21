@@ -54,7 +54,12 @@ public abstract class BaseBarActivity extends BaseActivity {
         right_second_icon.setOnClickListener(onClickListener);
     }
 
-    public abstract void setToolbar();
+    public void setToolbar(View view ){
+        bindToolbar(view);
+    }
+    public void setToolbar(int id){
+        this.setToolbar(findViewById(id));
+    }
 
     public void setTitle(String str) {
         this.title.setText(str);

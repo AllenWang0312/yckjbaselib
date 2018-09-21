@@ -27,17 +27,21 @@ public abstract class BaseBarFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        refeshData();
+    }
+
+    public void bindToolbar(View view){
         title= (TextView) view.findViewById(R.id.tv_title);
         text_right=(TextView)view.findViewById(R.id.tv_right);
         icon_left=(ImageView)view.findViewById(R.id.iv_left);
 
         icon_right= (ImageView) view.findViewById(R.id.iv_right);
         icon_right_second= (ImageView) view.findViewById(R.id.iv_right_second);
-        setToolbar();
-        refeshData();
     }
 
-    public abstract void setToolbar();
+    public  void setToolbar(View view){
+        bindToolbar(view);
+    }
 
     public void setTitle(String str) {
         title.setText(str);

@@ -38,14 +38,16 @@ public class BaseWebViewActivity extends BaseBarActivity {
             Log.i("web href", url);
         }
         setContentView(R.layout.activity_service_text);
-        bindToolbar(R.id.toolbar);
+//        bindToolbar(R.id.toolbar);
 //        R.drawable.anglered
-        setToolbar();
+        setToolbar(R.id.toolbar);
         initView();
+        initDate();
     }
 
+
     @Override
-    public void setToolbar() {
+    public void setToolbar(int id) {
         enableBackIcon();
         setTitle(title);
     }
@@ -92,8 +94,9 @@ public class BaseWebViewActivity extends BaseBarActivity {
             }
 
         });
-
-        webview.setWebViewClient(new WebViewClient());
+    }
+    private void initDate() {
+        //        webview.setWebViewClient(new WebViewClient());
         if (url != null) {
             webview.loadUrl(url);
         } else {
@@ -101,7 +104,6 @@ public class BaseWebViewActivity extends BaseBarActivity {
                 webview.loadData(content, "text/html", "UTF-8");
             }
         }
-
     }
 
     public static void start(Context activity, String title, String url) {

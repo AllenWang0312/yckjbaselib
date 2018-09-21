@@ -97,7 +97,8 @@ public abstract class BaseH5Activity<T extends H5InterfaceBean> extends BaseBarA
 
     public abstract String getUrl();
     @Override
-    public void setToolbar() {
+    public void setToolbar(int id) {
+        super.setToolbar(id);
         enableBackIcon();
         setTitle("订单详情");
         if (web != null) {

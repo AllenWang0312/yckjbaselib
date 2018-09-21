@@ -10,12 +10,15 @@
         <!--<item name="actionBarSize">45dp</item>-->
     <!--</style>-->
 
-    <!--<style name="AppTheme.Translucent">-->
-        <!--<item name="android:windowTranslucentNavigation">true</item>-->
-        <!--<item name="android:windowTranslucentStatus">true</item>-->
-    <!--</style>-->
+    <style name="AppTheme.Translucent">
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
 
-
+    <style name="AppTheme.TranslucentStatus">
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
 
 
     <!--<style name="NoBackGroundDialog" parent="@android:style/Theme.Holo.Light.Dialog">-->

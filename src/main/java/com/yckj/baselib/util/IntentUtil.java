@@ -53,6 +53,13 @@ public class IntentUtil {
         return intent;
     }
 
+    public static Intent openUrlWithSystemChrome(String url) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        intent.setData(Uri.parse(url));
+        return intent;
+    }
+
     public static Intent getGaoDeNai(MapNaviUtil.LatLang to) {
         Intent intents = new Intent();
         intents.setData(Uri.parse("androidamap://navi?sourceApplication=nyx_super&lat=" +
@@ -119,7 +126,7 @@ public class IntentUtil {
         context.startActivityForResult(intent, PHOTO_REQUEST_GALLERY);
     }
 
-//    ACTION_IMAGE_CAPTURE 拍摄一张
+    //    ACTION_IMAGE_CAPTURE 拍摄一张
     //ACTION_IMAGE_CAPTURE_SECURE 吊起相机
     //INTENT_ACTION_STILL_IMAGE_CAMERA
     public static Intent TakePhotoIntent(String abspath) {
@@ -127,5 +134,24 @@ public class IntentUtil {
         Uri uri = Uri.fromFile(new File(abspath));
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         return intent;
+    }
+
+    /**
+     * 跳转应用商店.
+     *
+     * @param context   {@link Context}
+     * @param appPkg    包名
+     * @param marketPkg 应用商店包名
+     * @return {@code true} 跳转成功 <br> {@code false} 跳转失败
+     */
+    public static Intent toMarket(Context context, String appPkg, String marketPkg) {
+        Uri uri = Uri.parse("market://details?id=" + appPkg);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (marketPkg != null) {// 如果没给市场的包名，则系统会弹出市场的列表让你进行选择。
+            intent.setPackage(marketPkg);
+        }
+        return intent;
+
     }
 }
